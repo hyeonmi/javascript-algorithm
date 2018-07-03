@@ -1,20 +1,17 @@
-var someArray = [2,3,5,8,9,10,15];
-var target = 3;
+function binarySearchIterative(list, x){
+    var left = 0;
+    var right = list.length - 1;
+    
+    while(left <= right){
+        var mid = parseInt(left + ((right - left)/2));
 
-var find = function(someArray, target){
-    var mid = 0;
-    var targetList;
-    var total = someArray.length;
-
-    mid = total/2
-    var pickMid = someArray[mid];
-    if(pickMid === target){
-        return target;
-    }else if(pickMid > target){
-        //mid 기준으로 앞 배열
-    } else {
-        //mid 기준으로 뒷 배열
+        if(list[mid] === x){
+            return true;
+        } else if(x < list[mid]){
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
     }
-
-
+    return false;
 }
