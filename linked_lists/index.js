@@ -54,3 +54,5 @@ function LinkedLists(){
         }
     }
 }
+
+module.exports = LinkedLists;
