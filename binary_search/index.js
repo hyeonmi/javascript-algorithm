@@ -1,4 +1,4 @@
-function binarySearchIterative(list, x){
+function binarySearch(list, x){
     var left = 0;
     var right = list.length - 1;
     
@@ -15,3 +15,5 @@ function binarySearchIterative(list, x){
     }
     return false;
 }
+
+module.exports = binarySearch;
