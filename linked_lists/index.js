@@ -51,6 +51,20 @@ function LinkedLists(){
                 }
                 current = current.next;
             }   
+        },
+
+        find: function(data){
+            if(head === null){
+                return;
+            }
+
+            var current = head;
+            while(current !== null){
+                if(current.data === data){
+                    return current;
+                }
+                current = current.next;
+            }   
         }
     }
 }
