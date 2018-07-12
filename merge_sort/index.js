@@ -1,22 +1,38 @@
-function mergeSort(arr, left, right){
-    var middle = parseInt((left + right) / 2, 10);
-
-    mergeSort(arr.slice(left, middle));
-    mergeSort(arr.slice(mid + 1, right));
-}
-
-function compareSort(arr, left, right){
-
-    var temp = [];
-    while(left <= right){
-        if(arr[left] < arr[right]){
-            temp.push(arr[left]);
-            left++;
-        } else {
-            temp.push(arr[right]);
-            right++;
-        }    
+function mergeSort(arr){
+    if(arr.length <=1){
+        return arr;
     }
+
+    var left = 0;
+    var right = arr.length;
+    var middleIndex = parseInt(arr.length / 2, 10);
+
+    var leftArray = mergeSort(arr.slice(left, middleIndex));
+    var rightArray = mergeSort(arr.slice(middleIndex, right));
+
+    return mergeSortedArray(leftArray, rightArray);
 }
-var arr = [1,10,5,9,11,30,1,6,8];
-mergeSort(arr, 0, arr.length);
+
+function mergeSortedArray(leftArray, rightArray){
+    var sortedArray = [];
+    while(leftArray.length && rightArray.length){
+        if(leftArray[0] < rightArray[0]){
+            const v = leftArray.shift();
+            sortedArray.push(v);
+            
+        } else {
+            const v = rightArray.shift();
+            sortedArray.push(v);
+        }
+    }
+
+    if(leftArray.length){
+        return sortedArray.concat(leftArray);
+    }
+
+    if(rightArray.length){
+        return sortedArray.concat(rightArray);
+    }
+
+    return sortedArray;
+}
