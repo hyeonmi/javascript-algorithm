@@ -11,7 +11,7 @@ function MinInHeap() {
         },
 
         getParentIndex(childIndex) {
-            return parseInt((childIndex - 1)/2, 10);
+            return parseInt((childIndex - 2)/2, 10);
         },
 
         hasLeftChild(index){
@@ -87,8 +87,14 @@ function MinInHeap() {
             return foundItems;
         },
 
-        heapifyDown(startIndex){
-            var currentIndex = startIndex || 0;
+        remove(item){
+            var lastItem = heaps.pop();
+            heaps[0] = lastItem;
+            this.heapifyDown();
+        },
+
+        heapifyDown(){
+            var currentIndex = 0;
             var nextIndex = null;
 
             while(this.hasLeftChild(currentIndex)){
@@ -98,7 +104,7 @@ function MinInHeap() {
                     nextIndex = this.getLeftChildIndex(currentIndex);
                 }
 
-                if(this.heaps[currentIndex] < this.heaps[nextIndex]){
+                if(heaps[currentIndex] < heaps[nextIndex]){
                     break;
                 }
 
@@ -107,8 +113,8 @@ function MinInHeap() {
             }
         },
 
-        heapifyUp(startIndex){
-            var currentIndex = startIndex || heaps.length - 1;
+        heapifyUp(){
+            var currentIndex = heaps.length - 1;
             
             while(this.hasParent(currentIndex) && (heaps[currentIndex] < this.parent(currentIndex))){
                 var parentIndex = this.getParentIndex(currentIndex);
