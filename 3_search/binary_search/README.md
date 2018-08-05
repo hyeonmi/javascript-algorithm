@@ -21,7 +21,7 @@
 
 Best case | Average | Worst case 
 --------- | -------- | ---------
-O(1) | O(log n) | O(log n)
+O(1)      | O(log n) | O(log n)
 
 
 ## Reference
