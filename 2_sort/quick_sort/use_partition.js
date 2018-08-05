@@ -25,10 +25,6 @@ function partition(list, left, right, pivot){
 }
 
 function quickSort(list, left, right){
-    //TODO 정리
-    left = (left === undefined ? 0 : left);
-    right = (right === undefined ? list.length-1 : right);
-
     if(left >= right){
         return;
     }
@@ -39,4 +35,3 @@ function quickSort(list, left, right){
     quickSort(list, index, right);
     return list;
 }
-
