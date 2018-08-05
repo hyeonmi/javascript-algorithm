@@ -10,29 +10,21 @@ function mergeSort(arr){
     var leftArray = mergeSort(arr.slice(left, middleIndex));
     var rightArray = mergeSort(arr.slice(middleIndex, right));
 
-    return mergeSortedArray(leftArray, rightArray);
+    return merge(leftArray, rightArray);
 }
 
-function mergeSortedArray(leftArray, rightArray){
+function merge(leftArray, rightArray){
     var sortedArray = [];
     while(leftArray.length && rightArray.length){
         if(leftArray[0] < rightArray[0]){
-            const v = leftArray.shift();
-            sortedArray.push(v);
+            const data = leftArray.shift();
+            sortedArray.push(data);
             
         } else {
-            const v = rightArray.shift();
-            sortedArray.push(v);
+            const data = rightArray.shift();
+            sortedArray.push(data);
         }
     }
 
-    if(leftArray.length){
-        return sortedArray.concat(leftArray);
-    }
-
-    if(rightArray.length){
-        return sortedArray.concat(rightArray);
-    }
-
-    return sortedArray;
+    return sortedArray.concat(leftArray).concat(rightArray);
 }
