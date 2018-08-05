@@ -1,45 +1,38 @@
-function Node(data){
-    this.data = data;
-    this.next = null;
+class Node {
+    constructor(data){
+        this.data = data;
+        this.next = null;    
+    }
 }
 
-function Queue(){
-    var head = null;
-    var tail = null;
+class Queue {
+    constructor(){
+        this.head = null;
+        this.tail = null;
+    }
 
-    return {
-        add : function(data){
-            var node = new Node(data);
-            if(!head){
-                head = node;
-                tail = head;
-            } else {
-                tail.next = node;
-                tail = node;
-            }
-        },
-
-        remove: function() {
-            if(head){
-                var target = head;
-                head = head.next;
-                return target.data;
-            }
-    
-            return null;
-        },
-
-        peek: function(){
-            if(this.isEmpty()){
-                return null;
-            }
-
-            return head.data;
-        },
-
-        isEmpty: function(){
-            return head === null;
+    enqueue(data){
+        const node = new Node(data);
+        if(this.head === null){
+            this.head = node;
+            this.tail = node;
+        }else {
+            this.tail.next = node;
+            this.tail = node;
         }
+    }
+
+    dequeue(){
+        if(this.head){
+            const header = this.head;
+            this.head = header.next;
+            return header.data;
+        }
+        return null;
+    }
+
+    peek(){
+        return this.head;
     }
 }
 
