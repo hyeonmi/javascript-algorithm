@@ -1,47 +1,38 @@
-function swap(arr, i, j){
-    var temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+function swap(arr, a, b){
+    const temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
 }
 
-function max_heapify(a, i, length) {
-    while (true) {
-        var left = i*2 + 1;
-        var right = i*2 + 2;
-        var largest = i;
+function heapSort(arr){
+    const heap = buildMaxHeap(arr);
 
-        if (left < length && a[left] > a[largest]) {
-            largest = left;
-        }
-
-        if (right < length && a[right] > a[largest]) {
-            largest = right;
-        }
-
-        if (i == largest) {
-            break;
-        }
-
-        swap(a, i, largest);
-        i = largest;
+    let endIndex = heap.length - 1;
+    for(let i = 0; i <= endIndex; i++){
+        swap(heap, i, endIndex);
+        maxHeapify(heap, i);
+        endIndex--;
     }
 }
 
-function heapify(a, length) {
-    for (var i = Math.floor(length/2); i >= 0; i--) {
-        max_heapify(a, i, length);
+function buildMaxHeap(arr){
+    const start = parseInt(arr.length/2, 10);
+    for(let i = start; i > -1; i--){
+        maxHeapify(arr, i);
+    }
+    return arr;
+}
+
+function maxHeapify(arr, index){
+    const left = index * 2 + 1;
+    const right = index * 2 + 2;
+
+    if(arr[left] > arr[index]){
+        swap(arr, index, left);
+    }
+
+    if(arr[right] > arr[index]){
+        swap(arr, index, right);
     }
 }
 
-function heapsort(a) {
-    heapify(a, a.length);
-
-    for (var i = a.length - 1; i > 0; i--) {
-        swap(a, i, 0);
-
-        max_heapify(a, 0, i-1);
-    }
-}
-
-heapsort(a);
-var a = [ 9, 10, 2, 1, 5, 4, 3, 6, 8, 7, 13 ];
