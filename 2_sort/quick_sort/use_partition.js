@@ -5,7 +5,7 @@ function swap(array, left, right){
 }
 
 function partition(list, left, right, pivot){
-    while(left <= right){
+    while(left < right){
         while(list[left] < pivot){
             left++;
         }
