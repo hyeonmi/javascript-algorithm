@@ -10,7 +10,7 @@ top 포인터가 존재하며 push되면 top의 위치가 가장 마지막을 �
 - peek : 스택 마지막 값을 반환합니다. 제거하지 않습니다.
 - isEmpty: 비어있는 여부를 반환 합니다.
 
-![wikipedia-stack](../img/stack.png)
+![wikipedia-stack](../../img/stack.png)
 
 ## Time complexity
 Algorithm | Average | Worst case

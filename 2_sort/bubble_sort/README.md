@@ -3,12 +3,12 @@
 그리고 나서 순환 수를 한번씩 줄여서 그 작업을 반복한다.  
 비용이 많이 드는 연산이지만 복잡하지 않다.
 
-![wikipedia_bubble_sort](../img/bubble_sort.gif)
+![wikipedia_bubble_sort](../../img/bubble_sort.gif)
 
 ## Performance
- Best case |  Average   | Worst case | Space 
------------| ---------- | ---------- | -------
-    O(n)   |    О(n^2)   |   О(n^2)    | O(1)
+ Best case |  Average | Worst case | Space 
+-----------| -------- | ---------- | ------
+ O(n)      | О(n^2)   | О(n^2)     | O(1)
 
 
 ## Reference

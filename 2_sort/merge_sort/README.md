@@ -4,7 +4,7 @@
 아래 이미지를 보면 이해하기 쉽다.
 이 코드는 Top-Down 방식으로 구현 했다.
 
-![wikipedia_merge_sort](../img/merge_sort.gif)
+![wikipedia_merge_sort](../../img/merge_sort.gif)
 
 
 ## Performance

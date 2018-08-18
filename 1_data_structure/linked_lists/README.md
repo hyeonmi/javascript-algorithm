@@ -8,7 +8,7 @@ head 포인터는 리스트의 처음을 가리킨다.
 - deleteWithValue : 해당 값을 지우고 삭제된 앞 노드가 뒤 노드를 참조를 갖도록 변경 한다.
 - peek : head를 반환 한다.
 
-![wikipedia_lined_list](../img/singly-linked-list.png)
+![wikipedia_lined_list](../../img/singly-linked-list.png)
 
 ## Reference
 - [Wikipedia](https://en.wikipedia.org/wiki/Linked_list)

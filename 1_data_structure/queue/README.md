@@ -10,7 +10,7 @@ head, tail 두가지 포인터가 존재하며 head는 가장 첫번째, tail은
 - peek : 큐 첫번째 값을 반환합니다. 제거하지 않습니다.
 - isEmpty: 비어있는 여부를 반환 합니다.
 
-![wikipedia-queue](../img/queue.png)
+![wikipedia-queue](../../img/queue.png)
 
 ## Time complexity
 Algorithm | Average | Worst case
