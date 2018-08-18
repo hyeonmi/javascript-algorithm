@@ -8,7 +8,7 @@
 ## Performance
  Best case |  Average   | Worst case | Space 
 -----------| ---------- | ---------- | -------
-    O(n)   |    О(n2)   |   О(n2)    | O(1)
+    O(n)   |    О(n^2)   |   О(n^2)    | O(1)
 
 
 ## Reference
