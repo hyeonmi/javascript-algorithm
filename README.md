@@ -1,18 +1,5 @@
 # README
-이 곳은 학습한 알고리즘을 정리하는 저장소입니다.
-
-## Dependencies
-- yarn
-- jest
-
-
-## Test
-
-```bash
-npm install
-yarn test
-```
-
+이 저장소는 알고리즘 학습한 내용을 아카빙하는 곳입니다.
 
 ## Reference 
 - [trechleb's js algorithms repository](https://github.com/trekhleb/javascript-algorithms)
