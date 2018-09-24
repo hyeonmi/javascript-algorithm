@@ -55,33 +55,30 @@ class Graph {
 
     }
 
-    breadthFirstSearch(startingNode){
+    breadthFirstSearch(vertex){
         const visited = [];
         const q = new Queue();
 
-        visited[startingNode] = true;
-        q.enqueue(startingNode);
+        visited[vertex] = true;
+        q.enqueue(vertex);
 
         while(!q.isEmpty()){
             let vertex = q.dequeue();
-
             console.log(vertex);
 
             const neighbours = this.edges.get(vertex);
-            for(let i in neighbours){
-                let neighbour = neighbours[i];
-                if(!visited[neighbour]){
-                    visited[neighbour] = true;
-                    q.enqueue(neighbour);
+            neighbours.forEach((n) => {
+                if(!visited[n]){
+                    visited[n] = true;
+                    q.enqueue(n);
                 }
-            }
+            });
         }
-
     }
 
-    depthFirstSearch(startingNode){
+    depthFirstSearch(vertex){
         const visited = [];
-        this.depthSearchIterator(startingNode, visited);
+        this.depthSearchIterator(vertex, visited);
     }
 
     depthSearchIterator(vertex, visited){
@@ -89,13 +86,11 @@ class Graph {
         console.log(vertex);
 
         const neighbours = this.edges.get(vertex);
-
-        for(let i in neighbours){
-            const neighbour = neighbours[i];
-            if(!visited[neighbour]){
-                this.depthSearchIterator(neighbour, visited);
+        neighbours.forEach((neigh) => {
+            if(!visited[neigh]){
+                this.depthSearchIterator(neigh, visited);
             }
-        }
+        })
     }
 }
 
